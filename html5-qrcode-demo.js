@@ -12,8 +12,17 @@ docReady(function() {
     var resultContainer = document.getElementById('qr-reader-results');
     var lastResult, countResults = 0;
     
+    const formatsToSupport = [
+          Html5QrcodeSupportedFormats.QR_CODE,
+          Html5QrcodeSupportedFormats.UPC_A,
+          Html5QrcodeSupportedFormats.UPC_E,
+          Html5QrcodeSupportedFormats.UPC_EAN_EXTENSION,
+    ];
+    
     var html5QrcodeScanner = new Html5QrcodeScanner(
-        "qr-reader", { fps: 10, qrbox: 250 });
+        "qr-reader", { fps: 10, qrbox: 250 },        
+        formatsToSupport: formatsToSupport
+    );
     
     function onScanSuccess(decodedText, decodedResult) {
         if (decodedText !== lastResult) {
