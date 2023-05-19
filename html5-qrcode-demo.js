@@ -19,10 +19,15 @@ docReady(function() {
           Html5QrcodeSupportedFormats.UPC_EAN_EXTENSION,
     ];
     
+    /*
     var html5QrcodeScanner = new Html5QrcodeScanner(
         "qr-reader", { fps: 10, qrbox: 250 },        
-        formatsToSupport: formatsToSupport
+        //formatsToSupport: formatsToSupport
     );
+    */
+    
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+        "qr-reader", { fps: 10, qrbox: 250 });
     
     function onScanSuccess(decodedText, decodedResult) {
         if (decodedText !== lastResult) {
