@@ -19,12 +19,12 @@ docReady(function() {
           Html5QrcodeSupportedFormats.UPC_EAN_EXTENSION,
     ];
     
-   <!--
+   /*
     //only qrcode
-    /*
+    
     var html5QrcodeScanner = new Html5QrcodeScanner(
         "qr-reader", { fps: 10, qrbox: 250 });
-    -->
+    */
     
 const formatsToSupport = [
   Html5QrcodeSupportedFormats.QR_CODE,
