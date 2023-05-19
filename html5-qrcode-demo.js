@@ -19,15 +19,29 @@ docReady(function() {
           Html5QrcodeSupportedFormats.UPC_EAN_EXTENSION,
     ];
     
+   <!--
+    //only qrcode
     /*
     var html5QrcodeScanner = new Html5QrcodeScanner(
-        "qr-reader", { fps: 10, qrbox: 250 },        
-        //formatsToSupport: formatsToSupport
-    );
-    */
-    
-    var html5QrcodeScanner = new Html5QrcodeScanner(
         "qr-reader", { fps: 10, qrbox: 250 });
+    -->
+    
+const formatsToSupport = [
+  Html5QrcodeSupportedFormats.QR_CODE,
+  Html5QrcodeSupportedFormats.UPC_A,
+  Html5QrcodeSupportedFormats.UPC_E,
+  Html5QrcodeSupportedFormats.UPC_EAN_EXTENSION,
+];
+
+const html5QrcodeScanner = new Html5QrcodeScanner(
+  "reader",
+  {
+    fps: 10,
+    qrbox: { width: 250, height: 250 },
+    formatsToSupport: formatsToSupport
+  },
+  /* verbose= */ false);
+
     
     function onScanSuccess(decodedText, decodedResult) {
         if (decodedText !== lastResult) {
