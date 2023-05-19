@@ -34,7 +34,7 @@ const formatsToSupport = [
 ];
 
 const html5QrcodeScanner = new Html5QrcodeScanner(
-  "reader",
+  "qr-reader",
   {
     fps: 10,
     qrbox: { width: 250, height: 250 },
